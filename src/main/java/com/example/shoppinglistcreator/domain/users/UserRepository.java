@@ -1,4 +1,4 @@
-package com.example.shoppinglistcreator.users;
+package com.example.shoppinglistcreator.domain.users;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
