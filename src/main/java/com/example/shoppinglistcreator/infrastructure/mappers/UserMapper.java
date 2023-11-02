@@ -1,7 +1,7 @@
 package com.example.shoppinglistcreator.infrastructure.mappers;
 
-import com.example.shoppinglistcreator.users.User;
-import com.example.shoppinglistcreator.users.UserDto;
+import com.example.shoppinglistcreator.domain.users.User;
+import com.example.shoppinglistcreator.domain.users.UserDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.ReportingPolicy;

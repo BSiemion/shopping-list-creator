@@ -1,4 +1,4 @@
-package com.example.shoppinglistcreator.users;
+package com.example.shoppinglistcreator.domain.users;
 
 import jakarta.persistence.*;
 import lombok.*;

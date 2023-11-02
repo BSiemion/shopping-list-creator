@@ -1,5 +1,6 @@
-package com.example.shoppinglistcreator.users;
+package com.example.shoppinglistcreator.domain.users;
 
+import com.example.shoppinglistcreator.infrastructure.exceptions.entity.EntityNotFoundException;
 import com.example.shoppinglistcreator.infrastructure.exceptions.entity.EntityUniqueKeyExistsException;
 import com.example.shoppinglistcreator.infrastructure.mappers.UserMapper;
 import lombok.AllArgsConstructor;
@@ -22,5 +23,11 @@ public class UserService {
         user.setCreationDate(LocalDateTime.now());
         userRepository.save(user);
         return userMapper.UserToUserDto(user);
+    }
+
+    public UserDto getOne(Long id) {
+        return userRepository.findById(id)
+                .map(userMapper::UserToUserDto)
+                .orElseThrow(() -> new EntityNotFoundException(User.USER, id));
     }
 }

@@ -1,4 +1,4 @@
-package com.example.shoppinglistcreator.users;
+package com.example.shoppinglistcreator.domain.users;
 
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -8,13 +8,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@NotEmpty
 public class UserDto {
     String name;
     String lastName;
     @Email
     String email;
-    @Pattern(regexp = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{6,}$\n", message = "hasło nie spełnia kryterii")
+    @Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$", message = "nie spełnia kryteriów")
     String password;
     @Max(120)
     @Min(10)
